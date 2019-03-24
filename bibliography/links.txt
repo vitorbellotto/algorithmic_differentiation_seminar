@@ -1,0 +1,8 @@
+
+MIT Course: Applied Mathematics for Finance https://www.youtube.com/watch?v=Z5yRMMVUC5w
+Classes in adjoint methods: http://cimss.ssec.wisc.edu/itwg/groups/rtwg/tl_ad_lectures/TL_Lectures.pdf
+                            http://cimss.ssec.wisc.edu/itwg/groups/rtwg/tl_ad_lectures/AD_Lectures.pdf
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/lecture-slides-and-files/MIT6_0002F16_lec6.pdf
+
+https://www.youtube.com/watch?v=pHRIPk1pQiw&t=278s
+https://www.youtube.com/watch?v=F3wSYr_6fdU&t=926s

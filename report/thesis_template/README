@@ -1,0 +1,10 @@
+## thesis.tex
+ Thesis template; build with
+
+   pdflatex thesis.tex
+
+
+## example.tex
+ Some useful commands; build with
+
+   pdflatex example.tex

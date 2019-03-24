@@ -1,0 +1,104 @@
+%******************************************************************************%
+% Author: Simon Maertens - simon.maertens@stce.rwth-aachen.de
+% Created October 2018 
+%******************************************************************************%
+
+% !TEX program = pdflatex or xelatex
+%% !BIB program = bibtex or biber or something else
+
+%******************************************************************************%
+% CLASS SETTINGS
+%******************************************************************************%
+\documentclass[
+  a4paper, 
+  fontsize=12pt, 
+  titlepage, 
+  listof=totocnumbered, 
+  index=totoc,        
+  bibliography=totocnumbered, 
+  numbers=noenddot
+]{scrartcl}
+%******************************************************************************%
+
+%******************************************************************************%
+% STYLE SPECIFICATION (choose english or german)
+%******************************************************************************%
+\usepackage[english]{template/thesisstyle} 
+%******************************************************************************%
+
+%******************************************************************************%
+% THESIS
+%******************************************************************************%
+\begin{document}
+
+% Title page
+\include{template/titlepage}
+\newpage\blankpage
+
+% Set Roman section numbering for acknowledgement, abstract, etc.
+\newcounter{savesection}
+\pagenumbering{gobble}
+\sectionnumbering{Roman}
+
+% Table of contents
+\tableofcontents
+\newpage\blankpage
+
+% Acknowledgements
+\include{content/acknowledgement}
+\newpage\blankpage
+
+% Abstract
+\include{content/abstract}
+\newpage\blankpage
+
+% List of Figures
+\listoffigures     
+\newpage\blankpage
+
+% List of Tables
+\listoftables
+\newpage\blankpage
+
+% List of Theorems
+\listoftheorems
+\newpage\blankpage
+
+% Set arabic section numbering for the main part
+\setcounter{savesection}{\number\value{section}}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\sectionnumbering{arabic}
+
+% Introduction
+\include{content/introduction}
+\newpage
+
+% Main part
+\include{content/implementation}
+\newpage
+
+% Results
+\include{content/results}
+\newpage
+
+% Conclusion
+\include{content/conclusion}
+\newpage
+
+% Set roman section numbering for the References
+\pagenumbering{gobble}
+\sectionnumbering{Roman}
+\setcounter{section}{\numexpr\value{savesection}}
+
+% References
+\bibliographystyle{plainnat}
+\bibliography{references/ref}
+\newpage
+
+% Appendix
+\appendix
+\include{content/appendix}
+
+\end{document}
+

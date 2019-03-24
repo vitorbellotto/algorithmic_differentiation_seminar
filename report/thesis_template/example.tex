@@ -1,0 +1,117 @@
+%******************************************************************************%
+% EXEMPLARY USAGE OF THE DEFINED COMMANDS
+%******************************************************************************%
+
+% !TEX program = pdflatex or xelatex
+%% !BIB program = bibtex or biber or something else
+
+%******************************************************************************%
+% CLASS SETTINGS
+%******************************************************************************%
+\documentclass[
+  a4paper, 
+  fontsize=12pt, 
+  titlepage, 
+  listof=totocnumbered, 
+  index=totoc,        
+  bibliography=totocnumbered, 
+  numbers=noenddot
+]{scrartcl}
+%******************************************************************************%
+
+%******************************************************************************%
+% STYLE SPECIFICATION (choose english or german)
+%******************************************************************************%
+\usepackage[english]{template/thesisstyle} 
+%******************************************************************************%
+
+%******************************************************************************%
+% GUIDE
+%******************************************************************************%
+\begin{document}
+
+% Math commands
+\section{Math Commands}
+
+  \begin{tabular}{l  l  c}
+    \toprule
+      Description & LateX Command & Result \\[3pt]
+    \midrule
+      Absolute value & $\backslash \text{abs}\lbrace \text{x} \rbrace$ & $\abs{x}$ \\[3pt]
+      Norm & $\backslash \text{norm}\lbrace \text{x} \rbrace\_2$ & $\norm{x}_2$ \\[3pt]
+      Ceil & $\backslash \text{ceil}\lbrace \text{x} \rbrace$ & $\ceil{x}$ \\[3pt]
+      Floor & $\backslash \text{floor}\lbrace \text{x} \rbrace$ & $\floor{x}$ \\[3pt]
+      Scalar Product & $\backslash \text{scalarp}\lbrace \text{x} \rbrace$ & $\scalarp{x}$ \\[3pt]
+      Average & $\backslash \text{avg}( \text{x} )$ & $\avg(x)$ \\[3pt]
+      Sign & $\backslash \text{sign}( \text{x} )$ & $\sign(x)$ \\[3pt]
+      Variance & $\backslash \text{var}( \text{x} )$ & $\var(x)$ \\[3pt]
+      Diagonal & $\backslash \text{diag}( \text{x} )$ & $\diag(x)$ \\[3pt]
+      Divergence & $\backslash \text{diver}( \text{x} )$ & $\diver(x)$ \\[3pt]
+      Gradient & $\backslash \text{grad}( \text{x} )$ & $\grad(x)$ \\[3pt]
+      Landau symbol & $\backslash \text{landau}( \text{n} )$ & $\landau(n)$ \\[3pt]
+      \midrule
+      For all & $\backslash \text{fa}$ & $\fa$ \\[3pt]
+      Follows & $\backslash \text{fol}$ & $\fol$ \\[3pt]
+      Is & $\backslash \text{is}$ & $\is$ \\[3pt]
+      Must be equal & $\backslash \text{mbeq}$ & $\mbeq$ \\[3pt]
+      Must be lower & $\backslash \text{mbl}$ & $\mbl$ \\[3pt]
+      Must be greater & $\backslash \text{mbg}$ & $\mbg$ \\[3pt]
+      Partial derivative & $\backslash \text{pdv}\lbrace \text{f(x)} \rbrace\lbrace \text{x} \rbrace$ & $\pdv{f(x)}{x}$ \\[3pt]
+      Infinitesimal symbol & $\backslash \text{dd}$ & $\dd$ \\[3pt]
+      Total derivative & $\backslash \text{tdv}\lbrace \text{f(x)} \rbrace\lbrace \text{x} \rbrace$ & $\tdv{f(x)}{x}$ \\[3pt]
+      Times with less space & $3\backslash \text{timesSmall }3$ & $3\timesSmall 3$ \\[3pt]
+      \midrule
+      Maximum & $\backslash \text{mmax}\lbrace \text{p} \rbrace \sim\text{f(x,p)}$ & $\mmax{p}~f(x,p)$ \\[3pt]
+      Minimum & $\backslash \text{mmin}\lbrace \text{p} \rbrace \sim\text{f(x,p)}$ & $\mmin{p}~f(x,p)$ \\[3pt]
+      Supremum & $\backslash \text{msup}\lbrace \text{p} \rbrace \sim\text{f(x,p)}$ & $\msup{p}~f(x,p)$ \\[3pt]
+      Infimum & $\backslash \text{minf}\lbrace \text{p} \rbrace \sim\text{f(x,p)}$ & $\minf{p}~f(x,p)$ \\[3pt]
+      Limit & $\backslash \text{mlim}\lbrace \text{p} \rbrace \sim\text{f(x,p)}$ & $\mlim{p}~f(x,p)$ \\[3pt]
+      Integral & $\backslash \text{mint}\lbrace\text{f(x)}\rbrace\lbrace\text{x}\rbrace\lbrace\text{a}\rbrace\lbrace\text{b}\rbrace$ & $\mint{f(x)}{x}{a}{b}$ \\[3pt]
+      Line Integral & $\backslash \text{moint}\lbrace\text{f(x)}\rbrace\lbrace\text{x}\rbrace\lbrace\text{a}\rbrace\lbrace\text{b}\rbrace$ & $\moint{f(x)}{x}{a}{b}$ \\[3pt]
+      \bottomrule
+  \end{tabular}
+  \newpage
+  
+\section{Enumerations Commands}
+  \paragraph{Roman} 
+    $\backslash \text{begin}\lbrace\text{enumRom}\rbrace \backslash \text{item bla}\backslash \text{end}\lbrace\text{enumRom}\rbrace$
+    \begin{enumRom} 
+      \item bla
+      \item bla
+      \item bla
+    \end{enumRom}
+
+  \paragraph{Arabic} 
+  $\backslash \text{begin}\lbrace\text{enumArab}\rbrace \backslash \text{item bla}\backslash \text{end}\lbrace\text{enumArab}\rbrace$
+    \begin{enumArab} 
+      \item bla
+      \item bla
+      \item bla
+    \end{enumArab}
+
+  \paragraph{Alphabetical} 
+  $\backslash \text{begin}\lbrace\text{enumAlph}\rbrace \backslash \text{item bla}\backslash \text{end}\lbrace\text{enumAlph}\rbrace$
+    \begin{enumAlph} 
+      \item bla
+      \item bla
+      \item bla
+    \end{enumAlph}
+  
+\section{Coding Commands}
+  \paragraph{\cpp} $\backslash \text{cpp}$  
+  \paragraph{\dcocpp{}} $\backslash \text{dcocpp}\lbrace\rbrace$  
+  \paragraph{\dcofortran{}} $\backslash \text{dcofortran}\lbrace\rbrace$   
+
+\section{Miscellaneous}
+  Use command $\backslash \text{begin}\lbrace\text{definition}\rbrace\left[\text{Bla}\right] \text{ My awesome definition!} \backslash \text{end}\lbrace\text{definition}\rbrace$ for your own definitions. They will be listed in the theorem section.
+
+  \begin{definition}[Bla]
+    My awesome definition!
+  \end{definition}
+
+  \par Use command $\backslash \text{sect}$, $\backslash \text{app}$, $\backslash \text{fig}$, $\backslash \text{tab}$, $\backslash \text{eq}$, $\backslash \text{defi}$ in order to reference a Section, Appendix, Figure, Table, Equation or Definition.
+
+
+
+  
+\end{document}

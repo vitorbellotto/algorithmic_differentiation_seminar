@@ -1,0 +1,71 @@
+%******************************************************************************%
+% MATH
+%******************************************************************************%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsopn}
+
+% Math typeset for vectors
+\usepackage{bm} % \bm for bold math text style used in vectors and matrices
+
+\usepackage{mathtools} % For DeclarePairedDelimiter
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\scalarp{\langle}{\rangle}
+\DeclarePairedDelimiter\mydq{\dq}{\dq}
+
+\usepackage{amsmath} % For DeclareMathOperator
+\DeclareMathOperator{\avg}{avg}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\landau}{\mathcal{O}}
+
+\newcommand{\fa}{\ensuremath{\forall}}
+\newcommand{\fol}{\ensuremath{\Rightarrow}}
+\newcommand{\is}{\ensuremath{\widehat{=}}}
+\newcommand{\mbeq}{\ensuremath{\overset{!}{=}}}
+\newcommand{\mbl}{\ensuremath{\overset{!}{<}}}
+\newcommand{\mbg}{\ensuremath{\overset{!}{>}}}
+\newcommand{\ip}{\ensuremath{\boldsymbol{\cdot}}}
+\newcommand{\pdv}[2]{\frac{\partial#1}{\partial#2}} % physic pack errors
+\newcommand{\tdv}[2]{\frac{\dd#1}{\dd#2}} % physic pack errors
+\newcommand{\timesSmall}{{\mkern-2mu\times\mkern-2mu}} % less space around X
+\newcommand{\dd}{\mathop{}\mathrm{d}} % integral infinitissemal symbol
+
+\newcommand{\mat}[1]{\ensuremath{\bm{#1}}}
+\newcommand{\vek}[1]{\ensuremath{\bm{#1}}}
+\newcommand{\ten}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\con}[1]{\ensuremath{\mathrm{#1}}}
+
+\newcommand{\bmat}[1]{ % less space in matrix
+  \ensuremath{
+    \begingroup % keep the change local
+      \setlength\arraycolsep{2pt}
+      \begin{bmatrix}
+        #1
+      \end{bmatrix}
+    \endgroup
+  }
+}
+
+\newcommand\bs{\verb|\|}
+\newcommand\mmax[1]{\smash{\displaystyle\max_{#1}}} % max
+\newcommand\mmin[1]{\smash{\displaystyle\min_{#1}}} % min
+\newcommand\msup[1]{\smash{\displaystyle\sup_{#1}}} % sup
+\newcommand\minf[1]{\smash{\displaystyle\inf_{#1}}} % inf
+\newcommand\mlim[1]{\smash{\displaystyle\lim_{#1}}} % lim
+\newcommand\mint[4]{\int_{#3}^{#4} #1 \, \mathrm{d}#2} % integral
+\newcommand\moint[4]{\oint_{#3}^{#4} #1 \, \mathrm{d}#2} % o integral
+\newcommand\mdq[1]{$\mydq{\textrm{#1}}$} % quotes
+\def\cross{\mathcal{X}}
+
+\usepackage{braket}
+\usepackage{xfrac}
+
+%******************************************************************************%

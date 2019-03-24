@@ -1,0 +1,231 @@
+% Paket
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ThesisStyle}
+
+%******************************************************************************%
+% LAYOUT
+%******************************************************************************%
+\usepackage{geometry}
+
+\geometry{a4paper, top=25mm, left=30mm, right=25mm, bottom=30mm,
+          headsep=10mm, footskip=12mm}
+\setlength\parindent{0em}
+
+% If a blank page is needed
+\newcommand\blankpage{
+  \mbox{}
+  \thispagestyle{empty}
+  \newpage
+}
+
+% Enable different section numbering
+\newcommand{\sectionnumbering}[1]{
+  \setcounter{section}{0}
+  \renewcommand{\thesection}{\csname #1\endcsname{section}}
+}
+
+% Use in order to list all definitions
+\usepackage{thmtools}
+\newtheorem{definition}{Definition}
+\renewcommand{\listtheoremname}{List of Definitions}
+%******************************************************************************%
+
+%******************************************************************************%
+% REFERENCES
+%******************************************************************************%
+\newcommand{\fig}[1]{Fig.~\ref{#1}}
+\newcommand{\figg}[1]{Figure~\ref{#1}}
+\newcommand{\eq}[1]{Eq.~(\ref{#1})}
+\newcommand{\eqq}[1]{Equation~(\ref{#1})}
+\newcommand{\tab}[1]{Table~\ref{#1}}
+\newcommand{\chap}[1]{Chapter~\ref{#1}}
+\newcommand{\sect}[1]{Section~\ref{#1}}
+\newcommand{\app}[1]{Appendix~\ref{#1}}
+\newcommand{\defi}[1]{Definition~\ref{#1}}
+\newcommand{\defii}[1]{Def.~\ref{#1}}
+
+\usepackage[pdftex,colorlinks,hypertexnames=false]{hyperref}
+\hypersetup{%
+	linkcolor={blue},
+	citecolor={red},
+}
+%******************************************************************************%
+
+%******************************************************************************%
+% LIST CUSTOMIZATION
+%******************************************************************************%
+\usepackage{enumitem}
+
+% Enumeration with alphs
+\newenvironment{enumAlph}[1][,]{
+  \begin{enumerate}[
+    label=\alph*),
+  ]
+}{
+  \end{enumerate}
+}
+
+% Enumeration with Roman
+\newenvironment{enumRom}[1][,]{
+  \begin{enumerate}[
+    label=\roman*),
+  ]
+}{
+  \end{enumerate}
+}
+
+% Enumeration with Arabic
+\newenvironment{enumArab}[1][,]{
+  \begin{enumerate}[
+    label=\arabic*),
+  ]
+}{
+  \end{enumerate}
+}
+%******************************************************************************%
+
+%******************************************************************************%
+% LANGUAGE SETTINGS
+%******************************************************************************%
+\newif\if@german
+\newif\if@english
+
+\DeclareOption{german}{
+\@germantrue}
+
+\DeclareOption{english}{
+\@englishtrue}
+
+\ProcessOptions{}
+
+\if@german
+	\usepackage[ngerman]{babel}
+	\usepackage[ngerman]{translator}
+\else
+	\usepackage[english]{babel}
+	\usepackage[english]{translator}
+\fi
+%******************************************************************************%
+
+%******************************************************************************%
+% FONT SETTINGS
+%******************************************************************************%
+\usepackage[T1]{fontenc}		  % european character set
+\usepackage[latin9]{inputenc}	% Microsoft Codepage for Windows
+\usepackage{scrpage2}	        
+\usepackage{color}            % colored writing
+
+% Disable single lines at the start of a paragraph (Schusterjungen)
+\clubpenalty = 10000
+
+% Disable single lines at the end of a paragraph (Hurenkinder)
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+%******************************************************************************%
+
+%******************************************************************************%
+% IMAGES & TABLES
+%******************************************************************************%
+\usepackage{graphicx}
+\usepackage{subfig}		  % subfloats, also mehrere Bilder nebeneinander
+\usepackage{adjustbox}  % shrink tables and other objects 
+\usepackage{booktabs}
+%******************************************************************************%
+
+%******************************************************************************%
+% CODING
+%******************************************************************************%
+\usepackage{listings}
+
+\newcommand{\cpp}{ % C++
+  {\ttfamily{C\kern-.03em{\raisebox{-.18ex}{+\kern-.028em{+}}}}}
+} 
+
+\newcommand{\dcocpp}{ % dco/c++
+  {\ttfamily dco\kern-.08em{\raisebox{-.1ex}{/}\kern-.15em
+  {c\kern-.03em{\raisebox{-.18ex}{+\kern-.028em{+}}}}}}
+}
+
+\newcommand{\dcofortran}{ % dco/Fortran
+  {\ttfamily dco\kern-.08em{\raisebox{-.1ex}{/}\kern-.15em{fortran}}}
+}
+
+% C++ Style
+\lstloadlanguages{[ISO]C++}
+\definecolor{mybg}{rgb}{0.99,0.99,0.99}
+\definecolor{mygreen}{rgb}{0,0.7,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.8,0.2,0.5}
+
+\lstset{
+  backgroundcolor=\color{mybg}, 
+  language=C++, 
+  basicstyle=\scriptsize, 
+  numbers=left, 
+  numberstyle=\tiny, 
+  stepnumber=1, 
+  numbersep=5pt, 
+  breaklines=true, 
+  columns=fixed, 
+  keywordstyle=\ttfamily, 
+  numberstyle=\tiny\color{mygray}, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{mymauve}, 
+  commentstyle=\color{mygreen},
+  morekeywords=[2]{dco,ga1s,gt1s,global_tape,tape_t,type,derivative,value,
+                   get,set,tape_options,jacobian_preaccumulator_t,
+                   external_adjoint_object_t,derivative_t,value_t,
+                   local_gradient_t,passive_t,passive_value,is_dco_type,
+                   is_adjoint_type,is_tangent_type,create,remove,iterator_t,
+                   get_position,register_variable,register_output_variable,
+                   register_input,register_output,write_data,read_data,
+                   interpret_adjoint,interpret_adjoint_from,
+                   interpret_adjoint_to,interpret_adjoint_from_to,
+                   interpret_adjoint_and_reset_to,reset,reset_to,
+                   interpret_adjoint_and_zero_adjoints_from_to,
+                   interpret_adjoint_and_zero_adjoints_to,zero_adjoints,
+                   zero_adjoints_from,zero_adjoints_to,zero_adjoints_from_to,
+                   create_callback_object,insert_callback,get_output_adjoint,
+                   increment_input_adjoint,tape,tape_index,mode,
+                   vector_reference,create_local_gradient_object,finalize,put,
+                   switch_to_passive,switch_to_active,is_active,tape_options_t,
+                   chunk_size_in_byte,log_level_enum,logger,level,stream, 
+                   plasma_enum_t}
+}
+%******************************************************************************%
+
+%******************************************************************************%
+% IMPROVED UNDERLINING
+%******************************************************************************%
+\usepackage{ulem}
+\usepackage{tikz}
+\normalem
+
+% arg 1: underline depth; 
+% arg 2: underline thickness; 
+% arg 3: space around descenders in pt (!)
+\newcommand\improvedul[4]{
+  \begingroup
+  \renewcommand\ULdepth{#1}
+  \renewcommand\ULthickness{#2}
+  \uline{\phantom{\smash{#4}}}
+  \foreach \hshift in {0.0, 0.1, ..., #3}{
+    \foreach \upshift in {-0.4, -0.3, ..., 1.0}{
+      \llap{\color{white}\raisebox{\upshift0pt}[0pt]{#4}\hspace{\hshift0pt}}
+      \llap{\color{white}\raisebox{\upshift0pt}[0pt]{#4}\hspace{-\hshift0pt}}
+    }
+  }
+  \llap{#4}
+  \endgroup}
+
+\newcommand\myul[1]{\improvedul{1.75pt}{0.5pt}{1}{#1}}
+%******************************************************************************%
+
+
+%******************************************************************************%
+% MATH
+%******************************************************************************%
+\usepackage{template/mathstyles}
+%******************************************************************************%
+
+\endinput
