@@ -1,0 +1,5 @@
+\select@language {ngerman}
+\beamer@sectionintoc {1}{Section}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Subsection 1}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Subsection 2}{7}{0}{1}
+\beamer@subsectionintoc {1}{3}{Subsection 3}{10}{0}{1}

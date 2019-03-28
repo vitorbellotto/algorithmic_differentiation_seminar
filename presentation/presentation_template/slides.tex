@@ -1,0 +1,107 @@
+% This file provides an example Beamer presentation using the RWTH theme
+% showcasing some of the more common options, similar to the Powerpoint version
+% 12.11.2014: Revision 1 (Harold Bruintjes, Tim Lange)
+
+% For RWTH, beamer should be loaded with class option t (top)
+\documentclass[t]{beamer}
+
+% Use fontspec to get Arial font
+% Requires use of XeLaTeX
+\usepackage{fontspec}
+\setmainfont{Arial}
+\setsansfont{Arial}
+% Also force Arial for math for a more consistent look
+\usepackage{unicode-math}
+%\setmathfont{Arial}
+\usepackage{listings}
+\lstloadlanguages{[ISO]C++}
+\lstset{
+        %frame=top,frame=bottom,
+        xleftmargin=1.2ex,
+        tabsize=2,
+        showspaces=false,
+        showstringspaces=false,
+        captionpos=b,
+        language=[ISO]C++,
+        basicstyle=\Large\ttfamily, 
+        numbers=left, 
+        numberstyle=\small, 
+        stepnumber=1, 
+        numbersep=5pt, 
+        breaklines=true,
+        escapeinside={/*}{*/}
+       }
+
+\lstset{morekeywords={
+        then, pragma, omp, parallel, pragma, num_threads, 
+        private, firstprivate, lastprivate, shared, default, 
+        reduction, copyin, atomic, task, taskyield, master, 
+        critical, barrier, taskwait, flush, ordered, threadprivate, 
+        ga1s, gt1s, gt1v, ga1v}
+       }
+
+
+\newcommand{\R}{I\!\!R}
+\newcommand{\X}{{\bf x}}
+\newcommand{\LA}{{\bf \lambda}}
+\newcommand{\A}{{\bf a}}
+\newcommand{\Y}{{\bf y}}
+\newcommand{\B}{{\bf b}}
+\newcommand{\bY}{\Y_{(1)}}
+\newcommand{\bX}{{\bar\X}}
+\newcommand{\dY}{\Y^{(1)}}
+\newcommand{\dX}{\X^{(1)}}
+\newcommand{\tG}{\tilde{G}}
+\newcommand{\tE}{\tilde{E}}
+\newcommand{\tV}{\tilde{V}}
+\newcommand{\cprec}{\prec^*}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\bV}{\overline{\V}}
+\newcommand{\hV}{\hat{\V}}
+\newcommand{\bhV}{\overline{\hV}}
+\newcommand{\dcocpp}{{\ttfamily dco\kern-.08em{\raisebox{-.1ex}{/}\kern-.15em {c\kern-.03em{\raisebox{-.18ex}{+\kern-.028em{+}}}}}}}
+
+% German style date formatting (footer)
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+
+\usepackage{MnSymbol,wasysym}
+
+% Format the captions used for figures etc.
+\usepackage[compatibility=false]{caption}
+\captionsetup{singlelinecheck=off,justification=raggedleft,labelformat=empty,labelsep=none}
+
+% PGFPlots is used for drawing some of the charts
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\input{plot_commands.tex}
+
+% Load the actual RWTH theme. Suggested is to load the full theme,
+% as it requires some specific dimensions
+\usetheme{rwth}
+
+\begin{document}
+
+\logo{\includegraphics{logo.png}}
+
+% Setup presentation information
+\title{TITLE}
+\date{DATE}
+\author{AUTHOR}
+
+\frame{\titlepage}
+
+\lstset{language=C++}
+\lstset{basicstyle=\small}
+\lstset{numbers=none}
+\lstset{numberstyle=\scriptsize}
+\lstset{numbersep=5pt}
+
+\section{SECTION}
+
+% Frame with items
+\begin{frame}
+  \dcocpp{}
+\end{frame}
+
+\end{document}
