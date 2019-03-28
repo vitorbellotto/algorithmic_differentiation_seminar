@@ -83,7 +83,7 @@
 \AtBeginSection[]
 {
   \begin{frame}<beamer>
-    \frametitle{Outline for section \thesection}
+    %\frametitle{Outline for section \thesection}
     \tableofcontents[currentsection]
   \end{frame}
 }
@@ -105,26 +105,74 @@
 \lstset{numberstyle=\scriptsize}
 \lstset{numbersep=5pt}
 
-\section{frame}
-
 % Frame with items
 \begin{frame}
 \frametitle{Table of Contents}
   %\dcocpp{}
+%\tableofcontents[currentsection]
 \tableofcontents[currentsection]
 \end{frame}
 
 
 
 \section{Introduction}
-\begin{frame} Test \end{frame}
+\begin{frame}Here the goal of the presentation is going to be stated. \end{frame}
 
-\section{Definition}
-\begin{frame} Explanation with Forward and Reverse\end{frame}
 
-  \begin{frame} Here I will explain to you the Forward Method \end{frame} 
+\subsection{Manual differentiation}
+\begin{frame}
+	\frametitle{Manual Differentiation} Image of someone derivating. Time image. 
+\end{frame}
 
-\begin{frame} Advantages and Disadvantages \end{frame}
+\subsection{Symbolic Differentiation}
+\begin{frame}
+	\frametitle{Symbolic Differentiation} 
+	Output differentiation from SymPy. Plot demonstrating the problem called expression swell.
+\end{frame}
+
+\subsection{Finite Differentiation}
+\begin{frame}
+	\frametitle{Finite Differentiation} 
+	Central Difference. Plot demonstrating round-off errors. 
+\end{frame}
+
+\subsection{Algorithmic Differentiation}
+\begin{frame}
+	\frametitle{Algorithmic Differentiation}
+ 	Code chuck with function. Derivative next to it. 
+\end{frame}
+
+\section{Categories of AD}
+% Forward method
+\subsection{Forward Method}
+\begin{frame}\frametitle{Forward Method} Definition.\end{frame}
+% Reverse method
+\subsection{Reverse Method}
+\begin{frame}\frametitle{Reverse Method} Definition.\end{frame}
+
+\begin{frame}\frametitle{Advantages and drawbacks}
+ Based on the definitions of tangent and adjoint, explain the advantages and disadvantages of AD.
+\end{frame}
+
+\section{General Application}
+\begin{frame} Machine learning. Optimization problems. Finances. \end{frame}
+
+\section{Finance with AD}
+\begin{frame}\frametitle{Libor Market Model} Using finance with AD \end{frame}
+
+\begin{frame}\frametitle{Greeks} \end{frame}
+
+\begin{frame}\frametitle{Monte Carlo pricing?} \end{frame}
+
+\begin{frame}\frametitle{dco++}\end{frame}
+
+\begin{frame}\frametitle{Other methods} \end{frame}
+
+\section{Bibliography}
+\begin{frame} Cite books and papers. \end{frame}
+
+
+
 
 
 
